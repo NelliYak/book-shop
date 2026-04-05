@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Книжная лавка - каталог</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!-- меню с классом menu -->
+    <ul class="menu">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+    </ul>
+
+    <hr>
+
+    <h1>Каталог книг</h1>
+
+    <!-- фильтр по жанрам -->
+    <div class="filter-container">
+        <h3>Фильтр по жанрам:</h3>
+        <select id="category-filter">
+            <option value="all">Все книги</option>
+            <option value="romance">Роман</option>
+            <option value="classic">Классика</option>
+            <option value="dystopia">Антиутопия</option>
+        </select>
+    </div>
+    
+    <!-- книга 1: Мастер и Маргарита -->
+    <div class="catalog-item" data-id="1" data-title="Мастер и Маргарита" data-price="499" data-category="romance">
+        <img src="images/book1_small.jpg">
+        <br>
+        <a href="master.html">Мастер и Маргарита</a>
+        <div class="book-price">499 ₽</div>
+        <button class="add-to-cart" data-id="1">Добавить в корзину</button>
+    </div>
+
+    <!-- книга 2: Преступление и наказание -->
+    <div class="catalog-item" data-id="2" data-title="Преступление и наказание" data-price="599" data-category="classic">
+        <img src="images/book2_small.jpg">
+        <br>
+        <a href="crime.html">Преступление и наказание</a>
+        <div class="book-price">599 ₽</div>
+        <button class="add-to-cart" data-id="2">Добавить в корзину</button>
+    </div>
+
+    <!-- книга 3: 1984 -->
+    <div class="catalog-item" data-id="3" data-title="1984" data-price="449" data-category="dystopia">
+        <img src="images/book3_small.jpg">
+        <br>
+        <a href="orwell.html">1984</a>
+        <div class="book-price">449 ₽</div>
+        <button class="add-to-cart" data-id="3">Добавить в корзину</button>
+    </div>
+
+    <hr>
+
+    <!-- секция корзины -->
+    <div id="cart-section" class="cart-section">
+        <h2>Корзина <span id="cart-count" class="cart-count">0</span></h2>
+
+        <!-- список товаров в корзине -->
+        <div id="cart-items" class="cart-items"></div>
+
+        <!-- общая сумма -->
+        <div id="cart-total" class="cart-total">Итого: 0 ₽</div>
+
+        <!-- кнопки управления корзиной -->
+        <div class="cart-buttons">
+            <button id="clear-cart" class="cart-btn clear-btn">Очистить корзину</button>
+            <button id="checkout-btn" class="cart-btn checkout-btn">Оплатить</button>
+        </div>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2026 Все права защищены.</p>
+    </footer>
+
+    <!-- подключаем JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

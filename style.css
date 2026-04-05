@@ -1,0 +1,386 @@
+body {
+    background-color: rgb(240, 245, 235); /* светлый оливковый */
+    font-family: 'Book Antiqua', 'Georgia', serif;
+    margin: 40px auto;
+    max-width: 1000px;
+    line-height: 1.8;
+    color: rgb(60, 70, 50);
+}
+
+/* МЕНЮ ul.menu */
+ul.menu {
+    list-style-type: none; /* убираем маркеры */
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+    ul.menu li {
+        display: inline; /* горизонтально меню */
+        margin-right: 35px;
+    }
+
+        ul.menu li a {
+            color: rgb(80, 110, 40); /* цвет ссылок */
+            font-size: 20px; /* размер шрифта */
+            font-weight: 500; /* насыщенность */
+            text-decoration: none;
+            font-style: normal; /* обычное начертание */
+        }
+
+            ul.menu li a:hover {
+                color: rgb(120, 160, 60);
+                text-decoration: underline;
+            }
+
+/* заголовки h2 (Краткое описание, Характеристики, Подробное описание) */
+h2 {
+    color: rgb(0, 0, 0); /* черный цвет */
+    font-size: 18px; /* размер 18px */
+    font-weight: 400; /* насыщенность 400 */
+    background-color: rgb(220, 235, 200); /* мятный фон */
+    padding: 12px 20px;
+    margin: 45px 0 20px 0;
+}
+
+/* кр описание */
+p.short-descr {
+    color: rgb(160, 80, 60); /* терракотовый цвет */
+    font-size: 14px; /* 14px */
+    font-style: italic; /* курсив */
+    line-height: 16px; /* высота строки 16px */
+    padding: 15px 0;
+    margin-bottom: 25px;
+}
+
+/* подробное описание */
+p.full-descr {
+    color: rgb(50, 80, 100); /* Сине-серый */
+    font-size: 16px; /* 16px */
+    font-weight: 400; /* насыщенность 400 */
+    line-height: 24px; /* высота строки 24px */
+    text-align: left; /* по левому краю */
+    padding: 15px 0;
+    margin-bottom: 25px;
+}
+
+/* характеристики ul.chars*/
+ul.chars {
+    list-style-type: none; /* убираем маркеры */
+    background-color: rgb(250, 252, 240);
+    padding: 25px 30px;
+    border: 1px solid rgb(190, 210, 150);
+    margin: 25px 0;
+    border-radius: 5px;
+}
+
+    ul.chars li {
+        background-image: url('images/marker.png'); /* маркеры-картинки */
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 20px 20px;
+        padding-left: 35px;
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: rgb(60, 70, 50);
+    }
+
+        ul.chars li b {
+            color: rgb(110, 140, 60);
+            font-weight: 600;
+            min-width: 150px;
+            display: inline-block;
+        }
+
+/* заголовок h1*/
+h1 {
+    color: rgb(70, 90, 40);
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* каталог*/
+.catalog-item {
+    display: inline-block;
+    margin: 20px 30px 20px 0;
+    text-align: center;
+    padding: 20px;
+    vertical-align: top;
+    transition: opacity 0.3s, display 0.3s;
+}
+
+    .catalog-item img {
+        border: 2px solid rgb(190, 210, 150);
+        border-radius: 8px;
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .catalog-item a {
+        display: block;
+        margin-top: 15px;
+        color: rgb(80, 110, 40); /* зеленый цвет ссылок */
+        font-weight: 600;
+        font-size: 18px;
+        text-decoration: none;
+    }
+
+        .catalog-item a:hover {
+            color: rgb(120, 160, 60);
+            text-decoration: underline;
+        }
+
+/* стили для цены товара*/
+.book-price {
+    color: rgb(110, 140, 60);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+/* стили для кнопок добавления в корзину */
+.add-to-cart {
+    background-color: rgb(110, 140, 60);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+    .add-to-cart:hover {
+        background-color: rgb(130, 170, 70);
+    }
+
+/* стили для фильтра */
+.filter-container {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgb(250, 252, 240);
+    border: 1px solid rgb(190, 210, 150);
+    border-radius: 5px;
+}
+
+    .filter-container h3 {
+        color: rgb(70, 90, 40);
+        margin: 0 0 15px 0;
+        font-size: 20px;
+    }
+
+#category-filter {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid rgb(190, 210, 150);
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(60, 70, 50);
+    cursor: pointer;
+    width: 250px;
+}
+
+    #category-filter:hover {
+        border-color: rgb(110, 140, 60);
+    }
+
+    #category-filter:focus {
+        outline: none;
+        border-color: rgb(110, 140, 60);
+        box-shadow: 0 0 5px rgba(110, 140, 60, 0.3);
+    }
+
+/* стили для корзины */
+.cart-section {
+    margin: 40px 0;
+    padding: 25px;
+    background-color: rgb(250, 252, 240);
+    border: 2px solid rgb(190, 210, 150);
+    border-radius: 8px;
+}
+
+    .cart-section h2 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+.cart-count {
+    background-color: rgb(110, 140, 60);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.cart-items {
+    min-height: 50px;
+    margin: 20px 0;
+}
+
+    /* Стили для пустой корзины */
+    .cart-items:empty::before {
+        content: 'Корзина пуста';
+        display: block;
+        text-align: center;
+        color: rgb(130, 150, 90);
+        font-style: italic;
+        padding: 30px;
+        background-color: rgba(190, 210, 150, 0.2);
+        border-radius: 5px;
+    }
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 1px solid rgb(190, 210, 150);
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+    .cart-item:hover {
+        transform: translateX(5px);
+        border-color: rgb(110, 140, 60);
+    }
+
+    .cart-item span {
+        font-size: 16px;
+        color: rgb(60, 70, 50);
+    }
+
+.remove-from-cart {
+    background-color: rgb(200, 100, 80);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+    .remove-from-cart:hover {
+        background-color: rgb(220, 120, 100);
+    }
+
+.cart-total {
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(110, 140, 60);
+    text-align: right;
+    margin: 20px 0;
+    padding: 15px 0;
+    border-top: 2px dashed rgb(190, 210, 150);
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.cart-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.clear-btn {
+    background-color: rgb(200, 100, 80);
+    color: white;
+}
+
+    .clear-btn:hover {
+        background-color: rgb(220, 120, 100);
+    }
+
+.checkout-btn {
+    background-color: rgb(110, 140, 60);
+    color: white;
+}
+
+    .checkout-btn:hover {
+        background-color: rgb(130, 170, 70);
+    }
+
+/* ссылки на страницах книг */
+/* ссылка-картинка */
+a img {
+    border: 2px solid rgb(190, 210, 150);
+    border-radius: 8px;
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+}
+
+/* подпись под картинкой */
+p i {
+    color: rgb(110, 130, 70);
+    font-size: 16px;
+}
+
+/* разделители */
+hr {
+    border: none;
+    border-top: 2px solid rgb(190, 210, 150);
+    margin: 40px 0;
+}
+
+/* подвал */
+footer {
+    margin-top: 60px;
+    padding: 25px 0;
+    text-align: center;
+    color: rgb(130, 150, 90);
+    font-size: 16px;
+    border-top: 1px solid rgb(190, 210, 150);
+}
+
+
+/* стили для печати */
+@media print {
+    .menu,
+    .add-to-cart,
+    .filter-container,
+    .cart-section,
+    footer {
+        display: none;
+    }
+
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+    }
+
+    /* стили для сообщения о пустой корзине */
+    .empty-cart-message {
+        text-align: center;
+        color: rgb(130, 150, 90);
+        font-style: italic;
+        padding: 30px;
+        background-color: rgba(190, 210, 150, 0.2);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+}
