@@ -32,6 +32,24 @@ const booksCatalog = [
 // массив корзины
 let cart = [];
 
+
+// функция сохранения корзины в localStorage
+const saveCartToLocalStorage = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+// функция загрузки корзины из localStorage
+const loadCartFromLocalStorage = () => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+    }
+};
+
+// загружаем корзину при старте
+loadCartFromLocalStorage();
+
+
 // функция подсчета итогов
 const calculateTotal = () => {
     let total = 0;
@@ -100,6 +118,7 @@ const renderCart = () => {
 // функция удаления
 const removeFromCart = (index) => {
     cart.splice(index, 1);
+    saveCartToLocalStorage(); // сохраняем в localStorage после удаления
     renderCart();
 };
 
@@ -107,6 +126,7 @@ const removeFromCart = (index) => {
 const clearCart = () => {
     if (cart.length > 0) {
         cart = [];
+        saveCartToLocalStorage(); // сохраняем в localStorage после очистки
         renderCart();
     }
 };
@@ -135,7 +155,7 @@ const filterBooks = (category) => {
     });
 };
 
-// при загразке страницы
+// при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
 
     // 1. настройка кнопок "Добавить в корзину"
@@ -154,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (book) {
                 // добавляем в корзину
                 cart.push(book);
+                saveCartToLocalStorage(); // сохраняем в localStorage после добавления
                 // обновляем корзину
                 renderCart();
             }
@@ -181,6 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. пустая корзина при загрузке
+    // 4. отрисовываем корзину (уже загруженную из localStorage)
     renderCart();
 });
